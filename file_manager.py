@@ -6,7 +6,7 @@ from functions import *
 
 def main():
     
-    print("Tatiana's file manager. Cobbection established.")
+    print("Tatiana's file manager. Connection established.")
     
     while True:
         
@@ -73,3 +73,5 @@ def main():
             file_name = input("Enter the name of the file: ")
             rename_file(file_name)
 
+if __name__ == "__main__":
+    main()
