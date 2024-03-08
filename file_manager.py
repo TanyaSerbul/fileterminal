@@ -23,6 +23,7 @@ def main():
         print("10. Rename file")
         
         choice = input("Enter the choice: ")
+        choice = int(choice)
         
         if choice == 1:
             folder_name = input("Enter the name of the folder: ")
