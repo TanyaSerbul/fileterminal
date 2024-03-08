@@ -74,5 +74,8 @@ def main():
             file_name = input("Enter the name of the file: ")
             rename_file(file_name)
 
+        else:
+            print("Input error")
+
 if __name__ == "__main__":
     main()
