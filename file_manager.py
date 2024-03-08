@@ -41,10 +41,10 @@ def main():
             choice2 = input("Enter the choice: ")
             
             if choice2 == 1:
+                move_up()
+            else:
                 folder_name2 = input("Enter the name of the folder: ")
                 move_to(folder_name2)
-            else:
-                move_up()
                 
         elif choice == 4:
             file_name = input("Enter the name of the file: ")
