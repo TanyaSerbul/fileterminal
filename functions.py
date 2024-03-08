@@ -43,7 +43,7 @@ def move_to(folder_name):
         CURRENT_DIRECTORY = os.getcwd()
         print("Moved to:", CURRENT_DIRECTORY)
     else:
-        print("Folder not found:", folder_name)
+        print("Folder not found within the current directory:", folder_name)
 
 def create_file(file_name):
     try:
