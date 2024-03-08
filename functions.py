@@ -24,23 +24,26 @@ def delete_folder(folder_name):
     except OSError as e:
         print(f"Error: {e}")
 
-def move_to(folder_name):
-    try:
-        os.chdir(folder_name)
-        print(f"Moved to '{folder_name}'.")
-    except FileNotFoundError:
-        print(f"Directory '{folder_name}' not found.")
-    except PermissionError:
-        print(f"Permission denied to access directory '{folder_name}'.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+CURRENT_DIRECTORY = os.getcwd()
 
 def move_up():
-    try:
-        os.chdir('..')
-        print("Moved up to the parent directory.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    global CURRENT_DIRECTORY
+    if CURRENT_DIRECTORY == "/home/tatiava/File_Manager":
+        print("You are already in the main folder.")
+    else:
+        os.chdir("..")
+        CURRENT_DIRECTORY = os.getcwd()
+        print("Moved up to:", CURRENT_DIRECTORY)
+
+def move_to(folder_name):
+    global CURRENT_DIRECTORY
+    new_directory = os.path.join(CURRENT_DIRECTORY, folder_name)
+    if os.path.exists(new_directory) and os.path.isdir(new_directory):
+        os.chdir(new_directory)
+        CURRENT_DIRECTORY = os.getcwd()
+        print("Moved to:", CURRENT_DIRECTORY)
+    else:
+        print("Folder not found:", folder_name)
 
 def create_file(file_name):
     try:
